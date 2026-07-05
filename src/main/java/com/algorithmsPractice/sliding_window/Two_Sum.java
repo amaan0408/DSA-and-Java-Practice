@@ -1,0 +1,20 @@
+package com.algorithmsPractice.sliding_window;
+
+import java.util.HashMap;
+
+public class Two_Sum {
+    public int[] twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for(int i=0; i<nums.length; i++){
+            int needed  = target - nums[i];
+            if(map.containsKey(needed)){
+                return new int [] {i, map.get(needed)};
+            }
+            else {
+                map.put(nums[i], i);
+            }
+        }
+        return new int [] {};
+    }
+}

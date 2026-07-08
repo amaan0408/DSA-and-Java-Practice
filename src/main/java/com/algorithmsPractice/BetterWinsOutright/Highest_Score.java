@@ -8,28 +8,25 @@ public class Highest_Score {
     //You're given an array of scores for players standing in a line
     // Return the index of the player with the highest score.
     // If multiple players tie for the highest score, return the index of the one standing earliest (smallest index).
-public int highestScore (int nums []){
-// nums [] = {12,34,45,67,89,9};
-
-    HashMap<Integer, Integer> map = new HashMap<>();
-    for(int i=0; i<nums.length; i++){
-        map.put(nums[i], i);
-    }
-    int highest = 0;
-    int index = 0;
-    for(Map.Entry<Integer, Integer> entry : map.entrySet()){
-        if(entry.getKey()>highest){
-            highest = entry.getKey();
-            index = entry.getValue();
+    public int highestScore(int nums[]) {
+        // Edge case: if array is empty
+        if (nums == null || nums.length == 0) {
+            return -1;
         }
-        else if(entry.getKey() == highest){
-            if(entry.getValue()<index){
-                index = entry.getValue();
+
+        int highest = nums[0];
+        int index = 0;
+
+        for (int i = 1; i < nums.length; i++) {
+            // Using strictly '>' ensures that if there's a tie,
+            // we keep the earliest index (the one we found first).
+            if (nums[i] > highest) {
+                highest = nums[i];
+                index = i;
             }
         }
+        return index;
     }
-    return index;
-}
     public static void main(String[] args) {
         Highest_Score obj = new Highest_Score();
         int arr[] = {10,10,2};

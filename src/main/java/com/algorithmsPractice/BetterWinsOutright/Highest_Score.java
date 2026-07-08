@@ -30,4 +30,11 @@ public int highestScore (int nums []){
     }
     return index;
 }
+    public static void main(String[] args) {
+        Highest_Score obj = new Highest_Score();
+        int arr[] = {10,10,2};
+
+        int result = obj.highestScore(arr);
+        System.out.println("The most repeated element is: " + result);
+    }
 }

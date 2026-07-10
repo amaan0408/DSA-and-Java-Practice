@@ -1,4 +1,4 @@
-package com.algorithmsPractice.HashMap;
+package com.algorithmsPractice.HashMap.Mapping;
 
 import java.util.HashMap;
 

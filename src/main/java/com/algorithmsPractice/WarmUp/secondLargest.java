@@ -6,6 +6,9 @@ public class secondLargest {
     public int secondBiggest (int arr[] ){
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
+        if(arr.length <2){
+            throw new IllegalArgumentException();
+        }
         // arr = [1,2,34,6,92];
         for(int i=0; i<arr.length; i++){
             if(arr[i]>max){
@@ -23,7 +26,7 @@ public class secondLargest {
     }
     public static void main(String[] args) {
         secondLargest nums = new secondLargest();
-        int arr [] = {12,6,2,1};
+        int arr [] = {12};
         int result = nums.secondBiggest(arr);
         System.out.println(result);
     }
